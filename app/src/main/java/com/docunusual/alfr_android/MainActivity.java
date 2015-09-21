@@ -1,11 +1,20 @@
 package com.docunusual.alfr_android;
 
+import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+import com.docunusual.alfr_android.inject.Application;
+import com.docunusual.alfr_android.inject.InjectableActionBarActivity;
+
+import javax.inject.Inject;
+
+public class MainActivity extends InjectableActionBarActivity {
+
+    @Inject
+    @Application
+    public Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
