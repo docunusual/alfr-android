@@ -9,7 +9,7 @@ import junit.framework.TestCase;
 import java.net.URI;
 
 
-public class FeedParserTest extends TestCase {
+public class FeedPageParserTest extends TestCase {
 
     public void testParseEmptyFeedPage() throws Exception {
         final FeedPage feedPage = new Gson().fromJson("{}", FeedPage.class);
@@ -17,9 +17,10 @@ public class FeedParserTest extends TestCase {
     }
 
     public void testParseFeedPage() {
-        final FeedPage feedPage = new Gson().fromJson(
-                "{'nextHref':'http://next.com/2','events':[" + EventParserTest.EVENT_1 + "]}", FeedPage.class);
+        final String feedPageJson = TestData.page("http://next.com/2", TestData.event("Tommy", "Hey Jim!"));
+        final FeedPage feedPage = new Gson().fromJson(feedPageJson, FeedPage.class);
         Assert.assertEquals(URI.create("http://next.com/2"), feedPage.getNextHref());
         Assert.assertEquals(1, feedPage.getEvents().size());
+        Assert.assertEquals("Tommy", feedPage.getEvents().get(0).getBy());
     }
 }
