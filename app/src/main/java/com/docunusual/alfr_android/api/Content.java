@@ -1,9 +1,11 @@
 package com.docunusual.alfr_android.api;
 
+
 public class Content {
 
     private String mime;
     private String inline;
+
 
     public String getMime() {
         return mime;
@@ -20,4 +22,5 @@ public class Content {
     public void setInline(String inline) {
         this.inline = inline;
     }
+
 }

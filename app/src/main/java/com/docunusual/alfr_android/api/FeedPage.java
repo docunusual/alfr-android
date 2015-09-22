@@ -3,9 +3,12 @@ package com.docunusual.alfr_android.api;
 import java.net.URI;
 import java.util.List;
 
+
 public class FeedPage {
+
     private URI nextHref;
     private List<Event> events;
+
 
     public URI getNextHref() {
         return nextHref;
@@ -22,4 +25,5 @@ public class FeedPage {
     public void setEvents(List<Event> events) {
         this.events = events;
     }
+
 }
