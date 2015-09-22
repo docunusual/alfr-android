@@ -1,6 +1,6 @@
-package com.docunusual.alfr_android;
+package com.docunusual.alfr_android.api;
 
-import com.docunusual.alfr_android.api.FeedPage;
+import com.docunusual.alfr_android.TestData;
 import com.google.gson.Gson;
 
 import junit.framework.Assert;

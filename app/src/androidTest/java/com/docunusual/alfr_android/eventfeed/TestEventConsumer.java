@@ -1,13 +1,12 @@
-package com.docunusual.alfr_android;
+package com.docunusual.alfr_android.eventfeed;
 
 import com.docunusual.alfr_android.api.Event;
-import com.docunusual.alfr_android.eventfeed.EventConsumer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-class TestEventConsumer implements EventConsumer {
+public class TestEventConsumer implements EventConsumer {
 
     private List<Event> events = new ArrayList<>();
 

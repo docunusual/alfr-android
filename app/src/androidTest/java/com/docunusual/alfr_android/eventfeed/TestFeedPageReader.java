@@ -1,6 +1,6 @@
-package com.docunusual.alfr_android;
+package com.docunusual.alfr_android.eventfeed;
 
-import com.docunusual.alfr_android.eventfeed.FeedPageReader;
+import com.docunusual.alfr_android.TestData;
 
 import java.net.URI;
 import java.util.HashMap;

@@ -1,6 +1,4 @@
-package com.docunusual.alfr_android;
-
-import com.docunusual.alfr_android.eventfeed.Feed;
+package com.docunusual.alfr_android.eventfeed;
 
 import junit.framework.TestCase;
 
