@@ -17,7 +17,7 @@ public class EventParserTest extends TestCase {
     public void testParserSimpleEvent() {
         final Event event = new Gson().fromJson(TestData.event("Tommy", "Hey Jim!"), Event.class);
         Assert.assertEquals("Tommy", event.getBy());
-        final Content content = event.getContent().get(0);
+        final Content content = event.getContent();
         Assert.assertEquals("text/plain", content.getMime());
         Assert.assertEquals("Hey Jim!", content.getInline());
     }

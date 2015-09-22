@@ -11,8 +11,8 @@ public class FeedTest extends TestCase {
         final TestEventConsumer eventConsumer = new TestEventConsumer();
         Feed.read(URI.create("http://alfr.net/feed"), new TestFeedPageReader(), eventConsumer);
         assertEquals(5, eventConsumer.getEvents().size());
-        assertEquals("Jimmerabing", eventConsumer.getEvents().get(0).getContent().get(0).getInline());
-        assertEquals("Hi Tommy.", eventConsumer.getEvents().get(4).getContent().get(0).getInline());
+        assertEquals("Jimmerabing", eventConsumer.getEvents().get(0).getContent().getInline());
+        assertEquals("Hi Tommy.", eventConsumer.getEvents().get(4).getContent().getInline());
     }
 
 }
