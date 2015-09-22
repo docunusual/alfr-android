@@ -1,9 +1,7 @@
 package com.docunusual.alfr_android.api;
 
-/**
- * Created by tnicolai on 21.09.15.
- */
 public class Content {
+
     private String mime;
     private String inline;
 

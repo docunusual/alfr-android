@@ -2,9 +2,6 @@ package com.docunusual.alfr_android.api;
 
 import java.util.List;
 
-/**
- * Created by tnicolai on 21.09.15.
- */
 public class Event {
 
     private String by;
