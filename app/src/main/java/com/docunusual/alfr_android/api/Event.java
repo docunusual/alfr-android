@@ -4,7 +4,7 @@ package com.docunusual.alfr_android.api;
 public class Event {
 
     private String by;
-    private Content content;
+    private String inline;
 
 
     public String getBy() {
@@ -15,12 +15,12 @@ public class Event {
         this.by = by;
     }
 
-    public Content getContent() {
-        return content;
+    public String getInline() {
+        return inline;
     }
 
-    public void setContent(Content content) {
-        this.content = content;
+    public void setInline(String inline) {
+        this.inline = inline;
     }
 
 }

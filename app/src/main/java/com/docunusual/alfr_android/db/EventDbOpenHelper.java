@@ -11,12 +11,10 @@ public class EventDbOpenHelper extends SQLiteOpenHelper {
 
     public static final String EVENT_TABLE_NAME = "events";
     public static final String KEY_BY = "by";
-    public static final String KEY_MIME = "mime";
     public static final String KEY_INLINE = "inline";
     public static final String EVENT_TABLE_CREATE =
             "CREATE TABLE " + EVENT_TABLE_NAME + " (" +
                     KEY_BY + " TEXT, " +
-                    KEY_MIME + " TEXT, " +
                     KEY_INLINE + " TEXT);";
 
     public EventDbOpenHelper(Context context) {
