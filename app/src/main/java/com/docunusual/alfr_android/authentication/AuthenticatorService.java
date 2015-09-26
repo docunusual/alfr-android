@@ -12,11 +12,13 @@ public class AuthenticatorService extends Service {
 
     // Instance field that stores the authenticator object
     private Authenticator mAuthenticator;
+    private boolean isCreated = false;
 
     @Override
     public void onCreate() {
         // Create a new authenticator object
         mAuthenticator = new Authenticator(this);
+        isCreated = true;
     }
 
     /*
@@ -26,5 +28,9 @@ public class AuthenticatorService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         return mAuthenticator.getIBinder();
+    }
+
+    public boolean isCreated() {
+        return isCreated;
     }
 }

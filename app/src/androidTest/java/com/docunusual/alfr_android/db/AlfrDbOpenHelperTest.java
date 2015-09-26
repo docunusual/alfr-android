@@ -10,7 +10,7 @@ import com.docunusual.alfr_android.api.Event;
 import junit.framework.Assert;
 
 
-public class EventsDbTest extends AndroidTestCase {
+public class AlfrDbOpenHelperTest extends AndroidTestCase {
 
     @Override
     public void setUp() throws Exception {
