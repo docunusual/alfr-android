@@ -23,6 +23,15 @@
             android:authorities="com.docunusual.alfr.provider"
             android:exported="false" />
 
+        <service android:name="com.docunusual.alfr_android.authentication.AuthenticatorService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/authenticator" />
+        </service>
+
     </application>
 
 </manifest>
