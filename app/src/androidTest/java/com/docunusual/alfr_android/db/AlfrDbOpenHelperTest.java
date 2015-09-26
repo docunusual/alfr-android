@@ -32,8 +32,8 @@ public class AlfrDbOpenHelperTest extends AndroidTestCase {
         final SQLiteDatabase database = alfrDbOpenHelper.getWritableDatabase();
 
         final ContentValues values = new ContentValues();
-        values.put(AlfrContract.Events.BY, event.getBy());
-        values.put(AlfrContract.Events.INLINE, event.getInline());
+        values.put(AlfrContract.Events.COLUMN_BY, event.getBy());
+        values.put(AlfrContract.Events.COLUMN_INLINE, event.getInline());
         database.insert(AlfrDbOpenHelper.EVENTS_TABLE_NAME, null, values);
 
         Assert.assertEquals(1, alfrDbOpenHelper.getCount());

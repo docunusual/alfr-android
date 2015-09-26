@@ -32,14 +32,14 @@ public class AlfrProviderTest extends ProviderTestCase2<AlfrProvider> {
         assertNotNull(cursor);
         assertEquals(1, cursor.getCount());
         assertTrue(cursor.moveToFirst());
-        assertEquals("Jimmy", cursor.getString(cursor.getColumnIndex(AlfrContract.Events.BY)));
-        assertEquals("Hi!", cursor.getString(cursor.getColumnIndex(AlfrContract.Events.INLINE)));
+        assertEquals("Jimmy", cursor.getString(cursor.getColumnIndex(AlfrContract.Events.COLUMN_BY)));
+        assertEquals("Hi!", cursor.getString(cursor.getColumnIndex(AlfrContract.Events.COLUMN_INLINE)));
     }
 
     private ContentValues getEventsContentValues() {
         final ContentValues values = new ContentValues();
-        values.put(AlfrContract.Events.BY, "Jimmy");
-        values.put(AlfrContract.Events.INLINE, "Hi!");
+        values.put(AlfrContract.Events.COLUMN_BY, "Jimmy");
+        values.put(AlfrContract.Events.COLUMN_INLINE, "Hi!");
         return values;
     }
 }

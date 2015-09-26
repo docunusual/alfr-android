@@ -31,9 +31,10 @@ public final class AlfrContract {
          */
         public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/alfr_event";
 
-        public static final String BY = "by";
-
-        public static final String INLINE = "inline";
+        public static final String COLUMN_BY = "by";
+        public static final String COLUMN_INLINE = "inline";
+        public static final String COLUMN_UUID = "uuid";
+        public static final String COLUMN_SYNCED = "synced";
 
     }
 }
