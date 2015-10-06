@@ -1,8 +1,12 @@
 package com.docunusual.alfr_android;
 
+import android.accounts.Account;
 import android.content.ContentValues;
+import android.database.ContentObserver;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,7 +23,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        AccountCreator.CreateSyncAccount(this);
+        final Account account = AccountCreator.CreateSyncAccount(this);
+        getContentResolver().registerContentObserver(AlfrContract.Events.CONTENT_URI, true, new ContentObserver(null) {
+            @Override
+            public void onChange(boolean selfChange) {
+                onChange(selfChange, null);
+            }
+
+            @Override
+            public void onChange(boolean selfChange, Uri uri) {
+                Log.i("ALFR", "ContentObserver.CHANGE");
+                AccountCreator.TriggerRefresh(account);
+            }
+        });
 
         setContentView(R.layout.activity_main);
         msgEdit = (EditText) findViewById(R.id.msg_edit);

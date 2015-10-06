@@ -1,8 +1,9 @@
-package com.docunusual.alfr_android.db;
+package com.docunusual.alfr_android.sync;
 
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import android.util.Log;
 
 /**
  * Define a Service that returns an IBinder for the
@@ -26,6 +27,7 @@ public class SyncService extends Service {
          * Set the sync adapter as syncable
          * Disallow parallel syncs
          */
+        Log.i("ALFR", "SyncService.onCreate");
         synchronized (sSyncAdapterLock) {
             if (sSyncAdapter == null) {
                 sSyncAdapter = new SyncAdapter(getApplicationContext(), true);
@@ -45,6 +47,7 @@ public class SyncService extends Service {
          * in the base class code when the SyncAdapter
          * constructors call super()
          */
+        Log.i("ALFR", "SyncService.onBind");
         return sSyncAdapter.getSyncAdapterBinder();
     }
 }

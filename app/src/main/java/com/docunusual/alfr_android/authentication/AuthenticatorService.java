@@ -3,6 +3,7 @@ package com.docunusual.alfr_android.authentication;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import android.util.Log;
 
 /**
  * A bound Service that instantiates the authenticator
@@ -17,6 +18,7 @@ public class AuthenticatorService extends Service {
     @Override
     public void onCreate() {
         // Create a new authenticator object
+        Log.i("ALFR", "AuthenticatorService.onCreate");
         mAuthenticator = new Authenticator(this);
         isCreated = true;
     }
@@ -27,6 +29,7 @@ public class AuthenticatorService extends Service {
      */
     @Override
     public IBinder onBind(Intent intent) {
+        Log.i("ALFR", "AuthenticatorService.onBind");
         return mAuthenticator.getIBinder();
     }
 

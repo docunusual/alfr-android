@@ -26,7 +26,8 @@
         <provider
             android:name="com.docunusual.alfr_android.db.AlfrProvider"
             android:authorities="com.docunusual.alfr.provider"
-            android:exported="false" />
+            android:exported="false"
+            android:syncable="true" />
 
         <service android:name="com.docunusual.alfr_android.authentication.AuthenticatorService">
             <intent-filter>
@@ -38,7 +39,7 @@
         </service>
 
         <service
-            android:name="com.docunusual.alfr_android.db.SyncService"
+            android:name="com.docunusual.alfr_android.sync.SyncService"
             android:exported="true"
             android:process=":sync">
             <intent-filter>
